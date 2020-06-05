@@ -127,13 +127,13 @@ def main():
         mckp.check_for_usable_restore_env()
 
         if dry_run or (
-            utils.confirm(
-                "You are going to uninstall Mackup.\n"
-                "Every configuration file, setting and dotfile"
-                " managed by Mackup will be unlinked and moved back"
-                " to their original place, in your home folder.\n"
-                "Are you sure ?"
-            )
+                utils.confirm(
+                    "You are going to uninstall Mackup.\n"
+                    "Every configuration file, setting and dotfile"
+                    " managed by Mackup will be unlinked and moved back"
+                    " to their original place, in your home folder.\n"
+                    "Are you sure ?"
+                )
         ):
 
             # Uninstall the apps except Mackup, which we'll uninstall last, to
@@ -194,3 +194,7 @@ def main():
 
     # Delete the tmp folder
     mckp.clean_temp_folder()
+
+
+if __name__ == '__main__':
+    main()
